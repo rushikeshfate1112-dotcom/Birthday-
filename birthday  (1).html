@@ -1,0 +1,155 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday ❤️</title>
+
+<style>
+body{
+font-family:Arial;
+text-align:center;
+background:linear-gradient(#ffd6e8,#fff);
+overflow:hidden;
+padding:30px;
+}
+
+button{
+padding:12px 22px;
+font-size:18px;
+margin:10px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+background:#ff4d88;
+color:white;
+}
+
+.heart{
+position:fixed;
+bottom:-20px;
+font-size:22px;
+animation:float 6s linear infinite;
+opacity:.7;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+100%{transform:translateY(-700px);opacity:0;}
+}
+
+img{
+width:200px;
+border-radius:20px;
+box-shadow:0 0 15px pink;
+margin:15px;
+}
+
+.confetti{
+position:fixed;
+top:0;
+font-size:24px;
+animation:fall 4s linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-40px);}
+100%{transform:translateY(700px);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+<audio autoplay loop>
+<source src="https://www.bensound.com/bensound-music/bensound-sunny.mp3">
+</audio>
+
+<h1>🎉 Happy Birthday <span style="color:#ff0055">Mayusha</span></h1>
+
+<p>I made something special for you… because you deserve EXTRA love </p>
+
+<div id="step1">
+<h2>Ready for your surprise? 🎁</h2>
+<button onclick="next1()">Yes </button>
+</div>
+
+<div id="step2" style="display:none">
+<h2>You are:</h2>
+<p>✨ Beautiful  
+<br>✨ Cute  
+<br>✨ Dangerous to my heart </p>
+
+<button onclick="next2()">Continue ❤️</button>
+</div>
+
+<div id="step3" style="display:none">
+<h2>One small question…</h2>
+<p>Do you promise to smile today?</p>
+<button onclick="next3()">I promise </button>
+</div>
+
+<div id="final" style="display:none">
+
+<h2>Happy Birthday to the girl who makes my normal days special 💕</h2>
+
+<p>
+May your life be full of love, success, shopping, good food,  
+and ME bothering you forever 
+</p>
+
+<h1>🎂💖🎉</h1>
+
+<button onclick="celebrate()">Click for Birthday Magic ✨</button>
+
+</div>
+
+<script>
+
+function next1(){
+step1.style.display="none";
+step2.style.display="block";
+}
+
+function next2(){
+step2.style.display="none";
+step3.style.display="block";
+}
+
+function next3(){
+step3.style.display="none";
+final.style.display="block";
+}
+
+function celebrate(){
+
+alert("You are officially older but still cute ");
+
+let msg=document.createElement("h2");
+msg.innerHTML="I wish you endless smiles, crazy memories & me by your side ❤️<br><br>Love,<br><b>Rushikesh</b>";
+document.body.appendChild(msg);
+
+setInterval(()=>{
+let c=document.createElement("div");
+c.className="confetti";
+c.innerHTML="🎉";
+c.style.left=Math.random()*100+"vw";
+document.body.appendChild(c);
+setTimeout(()=>c.remove(),4000);
+},200);
+
+}
+
+/* Floating hearts */
+setInterval(()=>{
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤️";
+h.style.left=Math.random()*100+"vw";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),6000);
+},400);
+
+</script>
+
+</body>
+</html>
